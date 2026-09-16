@@ -33,7 +33,12 @@ class Settings(BaseSettings):
     golden_set_path: str = "./data/golden_set/golden_set.jsonl"
     golden_set_size: int = 200
 
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    # Optional tools
+    kaggle_token: str | None = None
+
+    model_config = SettingsConfigDict(
+        env_file=".env", env_file_encoding="utf-8", extra="ignore"
+    )
 
     @property
     def postgres_url(self) -> str:
