@@ -51,3 +51,5 @@ pgdata/
 # ── Jupyter (not used but just in case) ──────────────────
 .ipynb_checkpoints/
 *.ipynb
+
+AGENTS.md
