@@ -1,0 +1,53 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ─────────────────────────────────
+.venv/
+venv/
+env/
+.env_backup
+
+# ── Environment / secrets ───────────────────────────────
+.env
+# (keep .env.example — it has no real secrets)
+
+# ── Data (large files) ──────────────────────────────────
+data/raw/
+data/processed/
+data/chroma/
+
+# ── Kaggle credentials ───────────────────────────────────
+~/.kaggle/
+
+# ── ChromaDB ────────────────────────────────────────────
+*.chroma/
+chroma.sqlite3
+
+# ── Database ────────────────────────────────────────────
+*.db
+*.sqlite
+
+# ── Logs ────────────────────────────────────────────────
+*.log
+logs/
+
+# ── IDE / OS ────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Docker volumes ──────────────────────────────────────
+pgdata/
+
+# ── Jupyter (not used but just in case) ──────────────────
+.ipynb_checkpoints/
+*.ipynb
