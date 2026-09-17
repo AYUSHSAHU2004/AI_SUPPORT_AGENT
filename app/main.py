@@ -175,7 +175,7 @@ async def generate_reply(request: ReplyRequest) -> ReplyResponse:
     tags=["Audit"],
 )
 async def get_logs(limit: int = 20) -> list[dict]:
-    """Retrieve recent conversation logs stored in PostgreSQL."""
+    """Retrieve recent conversation logs stored in SQLite."""
     try:
         async with AsyncSessionLocal() as session:
             stmt = (
