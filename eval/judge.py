@@ -98,11 +98,11 @@ class ReplyJudge:
                     }
                 )
                 scores = {
-                    "relevance": float(result.get("relevance", 0)),
-                    "groundedness": float(result.get("groundedness", 0)),
-                    "tone": float(result.get("tone", 0)),
-                    "conciseness": float(result.get("conciseness", 0)),
-                    "rationale": result.get("rationale", ""),
+                    "relevance": float(int(result.get("relevance", 0))),
+                    "groundedness": float(int(result.get("groundedness", 0))),
+                    "tone": float(int(result.get("tone", 0))),
+                    "conciseness": float(int(result.get("conciseness", 0))),
+                    "rationale": str(result.get("rationale", "")),
                 }
                 scores["composite"] = round(
                     sum(

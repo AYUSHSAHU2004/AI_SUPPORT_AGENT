@@ -104,12 +104,19 @@ def cohens_kappa(ratings_a: list[int], ratings_b: list[int]) -> float:
     return round(kappa, 4)
 
 
+NUMERIC_JUDGE_KEYS = {"relevance", "groundedness", "tone", "conciseness", "composite"}
+
+
 def mean_judge_scores(scores: list[dict[str, float]]) -> dict[str, float]:
     """
     Aggregate a list of per-example LLM judge score dicts into mean values.
-    Each score dict should have keys: relevance, groundedness, tone, conciseness.
+    Only averages numeric keys (relevance, groundedness, tone, conciseness, composite).
+    Skips string fields like 'rationale'.
     """
     if not scores:
         return {}
-    keys = scores[0].keys()
-    return {k: round(sum(s.get(k, 0) for s in scores) / len(scores), 3) for k in keys}
+    return {
+        k: round(sum(float(int(s.get(k, 0))) for s in scores) / len(scores), 3)
+        for k in NUMERIC_JUDGE_KEYS
+        if k in scores[0] and isinstance(scores[0][k], (int, float))
+    }
