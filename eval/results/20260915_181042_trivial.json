@@ -1,0 +1,114 @@
+{
+    "run_name": "20260915_181042",
+    "system_filter": "trivial",
+    "n_examples": 10,
+    "skip_judge": true,
+    "results": [
+        {
+            "system": "trivial",
+            "n_examples": 10,
+            "intent": {
+                "accuracy": 0.1,
+                "macro_f1": 0.0227,
+                "per_class_f1": {
+                    "order_tracking": 0.1818,
+                    "refund_return": 0.0,
+                    "account_access": 0.0,
+                    "product_issue": 0.0,
+                    "delivery_issue": 0.0,
+                    "billing_payment": 0.0,
+                    "general_inquiry": 0.0,
+                    "other": 0.0
+                }
+            },
+            "escalation": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+            },
+            "reply_quality": {},
+            "predictions": [
+                {
+                    "message": "Just received the Echo DOT &amp; is not working out of the box! No manual is provided!",
+                    "true_intent": "product_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": false,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "I reinstalled it &amp; it's working fine. But how did it happen in the first place?",
+                    "true_intent": "product_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": false,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "UPS. Both. Disappointing.",
+                    "true_intent": "delivery_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": true,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "It said it was on its way. It was at a ups warehouse 6 days ago 14 miles from my house. They successfully gave it to USPS to deliver to me. Seriously.",
+                    "true_intent": "delivery_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": true,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "Thanks. So, in summary, your tracking system is not to be relied upon for accuracy?",
+                    "true_intent": "delivery_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": true,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "hi I ordered something yesterday afternoon using amazon prime two day shipping when will it be here ?",
+                    "true_intent": "order_tracking",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": false,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "What the hell ?! This boxed is beyond damaged. I wanted a new one!",
+                    "true_intent": "product_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": true,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "#AmazonIndia what would reaching out that to end of day would do..Better try to get this atleast delivered today. That would be more helpful",
+                    "true_intent": "delivery_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": true,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "Why does think getting packages delivered through India Post is a good idea?",
+                    "true_intent": "delivery_issue",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": true,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                },
+                {
+                    "message": "Haha! Link requires me to log in to do anything :-P Already sent an email of sorts, but thank you for trying to help. I appreciate it!",
+                    "true_intent": "account_access",
+                    "pred_intent": "order_tracking",
+                    "true_escalate": true,
+                    "pred_escalate": false,
+                    "reply": "Hi! Thank you for reaching out to Amazon. Please DM us your order details and we'll look into it right away. ^AH"
+                }
+            ]
+        }
+    ]
+}
