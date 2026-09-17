@@ -22,12 +22,8 @@ class Settings(BaseSettings):
     chroma_persist_dir: str = "./data/chroma"
     max_retrieved_examples: int = 3
 
-    # PostgreSQL
-    postgres_host: str = "db"
-    postgres_port: int = 5432
-    postgres_db: str = "support_agent"
-    postgres_user: str = "agent"
-    postgres_password: str = "agentpass"
+    # SQLite (audit logs — no server required)
+    sqlite_db_path: str = "./data/support_agent.db"
 
     # Evaluation
     golden_set_path: str = "./data/golden_set/golden_set.jsonl"
@@ -39,22 +35,6 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
-
-    @property
-    def postgres_url(self) -> str:
-        """Async-compatible PostgreSQL DSN."""
-        return (
-            f"postgresql+asyncpg://{self.postgres_user}:{self.postgres_password}"
-            f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
-        )
-
-    @property
-    def postgres_url_sync(self) -> str:
-        """Sync PostgreSQL DSN (used for Alembic migrations)."""
-        return (
-            f"postgresql+psycopg2://{self.postgres_user}:{self.postgres_password}"
-            f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
-        )
 
 
 # Singleton — import this everywhere

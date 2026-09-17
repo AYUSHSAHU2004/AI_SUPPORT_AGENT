@@ -1,0 +1,21 @@
+services:
+
+  # ── FastAPI Support Agent API ───────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: .env # All secrets + config come from .env
+    ports:
+      - "${FASTAPI_PORT:-8088}:8088"
+    volumes:
+      # ChromaDB: mount your pre-built local index into the container.
+      # Run scripts/build_index.py locally first, then docker-compose up --build.
+      - ./data:/app/data # Mounts chroma, golden_set, sqlite DB — all in one
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8088/health')" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

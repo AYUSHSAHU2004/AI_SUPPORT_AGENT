@@ -11,10 +11,9 @@ langchain-community
 # Vector store
 chromadb
 
-# Database
+# Database (SQLite — no server needed)
 sqlalchemy
-asyncpg
-alembic
+aiosqlite
 
 # Data processing & ML
 pandas
@@ -28,9 +27,6 @@ python-dotenv
 
 # HTTP client
 httpx
-
-# Evaluation metrics
-scipy
 
 # Tools & CLI
 kaggle
